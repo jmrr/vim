@@ -20,7 +20,7 @@ syntax on
 " Set line numbers
 set nu
 " Colorscheme wombat256
-colorscheme wombat-256mod "wombat256mod
+colorscheme wombat256mod
 " Enable plugins
 execute pathogen#infect()
 " Confirm save on exit
