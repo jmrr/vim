@@ -77,7 +77,12 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 " Show mappings
 nnoremap <leader>mp :map<CR>
 " Show index
-nnoremap <leader>hi :help index<CR>o
+nnoremap <leader>hi :help index<CR>
+
+" WARNING: mac specific
+inoremap √ <c-r><c-o>+
+inoremap ß <esc>A
+
 
 " Custom functions. FIXME: make plugins
 " Replace with confirmation
