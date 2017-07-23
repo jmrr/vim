@@ -1,15 +1,14 @@
 "            ---=== The Great VIM config ===---
-"                    *** since 2014 ***        
+"                    *** since 2014 ***
 
 " ISSUES:
 " * Multi file/buffer replace
 " * Multi file/buffer jump
 " * Multi word refactoring
-" * List usages
+" * List usages *.go
 " * Surround
-" * Single letter commands conflicts
 " * Not all bracket jumps work
-" * Remove breckets in pair
+" * Remove brackets in pair
 
 " ----------------------- settings -----------------------------
 
@@ -34,7 +33,7 @@ set cursorline " Highlite current line
 set backup " Keep a backup file
 set backupdir=/private/tmp " Put backup files to tmp (specific for osx)
 set dir=/private/tmp " Put swap files to tmp (specific for osx)
-set pastetoggle=<leader>sp " Toggle paste mode
+set pastetoggle=<f5> " Toggle paste mode
 set foldmethod=manual " MAnual fold
 " set foldlevel=10
 
@@ -55,38 +54,30 @@ nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 " Left
 nnoremap <C-h> <C-W><C-H>
-
-" Replace after cursor
-map <C-g> <C-v>$s
-
 " Save with ,w
-map <leader>w :w<CR>
+noremap <leader>w :w<CR>
 " Exit with ,q
-map <leader>q :q<CR>
+noremap <leader>q :q<CR>
 " Save and exit with ,x
-map <leader>x :wq<CR>
+noremap <leader>x :wq<CR>
 " Toggle nerdtree
 map <leader>n :NERDTreeToggle<CR>
 " Reset NERDTree
 map <leader>N :NERDTree<CR>
 " NerdTree default size
 map <leader>v :BuffergatorToggle<CR>
-" List recently edited files
-map <leader>mr :MRU<CR>
-" Next buffer
-map <leader>f :bnext<CR>
-" Previous buffer
-map <leader>b :bprevious<CR>
-" List buffers
-map <leader>ls :ls<CR>
 " Line break
-map <leader>lb i<CR><Esc>
-" ?
-map <leader>ll :s/,/\0\r/g<CR>
+noremap <leader>lb i<CR><Esc>
+" Brek line after comma
+noremap <leader>ll :s/,/\0\r/g<CR>
 " Remove trailing whitespaces
-map <leader>dt :%s/\s\+$//e<CR>
+noremap <leader>dt :%s/\s\+$//e<CR>
 " Reset search highlighting
-map <F4> :set hlsearch! hlsearch?<CR>
+noremap <F4> :set hlsearch! hlsearch?<CR>
+" Show mappings
+nnoremap <leader>mp :map<CR>
+" Show index
+nnoremap <leader>hi :help index<CR>o
 
 " Custom functions. FIXME: make plugins
 " Replace with confirmation
@@ -97,4 +88,3 @@ endfunction
 
 command -nargs=+ RefactorCmd :call Refactor(<f-args>)
 vnoremap // y:RefactorCmd <C-R>" 
-
