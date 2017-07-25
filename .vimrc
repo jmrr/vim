@@ -35,7 +35,8 @@ set backup " Keep a backup file
 set backupdir=/private/tmp " Put backup files to tmp (specific for osx)
 set dir=/private/tmp " Put swap files to tmp (specific for osx)
 set pastetoggle=<f5> " Toggle paste mode
-"set foldmethod=syntax " MAnual fold
+set foldmethod=syntax
+:set sessionoptions+=folds
 " set foldlevel=10
 
 let NERDTreeIgnore = ['\.swo$', '\.swp$'] " Let Nerdtree ignore vim backup files
@@ -56,7 +57,7 @@ nnoremap <C-l> <C-W><C-L>
 " Left
 nnoremap <C-h> <C-W><C-H>
 " Save with ,w
-noremap <leader>w :w<CR>
+noremap <leader>w :w<CR>zO
 " Exit with ,q
 noremap <leader>q :q<CR>
 " Save and exit with ,x
