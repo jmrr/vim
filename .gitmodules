@@ -34,9 +34,6 @@
 [submodule ".vim/bundle/vim-snippets"]
 	path = .vim/bundle/vim-snippets
 	url = git@github.com:I159/vim-snippets.git
-[submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
-	url = git@github.com:tpope/vim-surround.git
 [submodule ".vim/bundle/vim-buffergator"]
 	path = .vim/bundle/vim-buffergator
 	url = git@github.com:jeetsukumaran/vim-buffergator.git

@@ -2,13 +2,14 @@
 "                    *** since 2014 ***
 
 " ISSUES:
-" * Multi file/buffer replace
-" * Multi file/buffer jump
-" * Multi word refactoring
-" * List usages *.go
-" * Surround
-" * Not all bracket jumps work
+" * Set fold method programmatically
 " * Remove brackets in pair
+" * Multi word refactoring
+" * List usages (callers) *.go
+" * Multi file/buffer jump
+" * Multi line surround
+" * Not all bracket jumps work
+" * Multi file/buffer replace
 
 " ----------------------- settings -----------------------------
 
@@ -34,7 +35,7 @@ set backup " Keep a backup file
 set backupdir=/private/tmp " Put backup files to tmp (specific for osx)
 set dir=/private/tmp " Put swap files to tmp (specific for osx)
 set pastetoggle=<f5> " Toggle paste mode
-set foldmethod=manual " MAnual fold
+"set foldmethod=syntax " MAnual fold
 " set foldlevel=10
 
 let NERDTreeIgnore = ['\.swo$', '\.swp$'] " Let Nerdtree ignore vim backup files
@@ -80,16 +81,24 @@ nnoremap <leader>mp :map<CR>
 nnoremap <leader>hi :help index<CR>
 
 " WARNING: mac specific
+" Make it good and make it better.
 inoremap √ <c-r><c-o>+
 inoremap ß <esc>A
+"inoremap ø <esc><"c-o>i
 
 
-" Custom functions. FIXME: make plugins
-" Replace with confirmation
+" Visual mode
 function! Refactor(old, new)
-	exe 'set autowriteall'
-	exe 'bufdo %s/' . a:old . '/' . a:new . '/gc'
+	exe '%s/' . a:old . '/' . a:new . '/gc'
 endfunction
-
 command -nargs=+ RefactorCmd :call Refactor(<f-args>)
+
+" Refactoring
 vnoremap // y:RefactorCmd <C-R>" 
+" Single line surrounds
+vnoremap <leader>" di""<esc>bpf"l
+vnoremap <leader>' di''<esc>bpf'l
+vnoremap <leader>) di()<esc>bpf)l
+vnoremap <leader>} di{}<esc>bpf}l
+vnoremap <leader>] di[]<esc>bpf]l
+vnoremap <leader>> di<><esc>bpf>l
