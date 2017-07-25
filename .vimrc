@@ -2,7 +2,6 @@
 "                    *** since 2014 ***
 
 " ISSUES:
-" * Set fold method programmatically
 " * Remove brackets in pair
 " * Multi word refactoring
 " * List usages (callers) *.go
@@ -10,6 +9,10 @@
 " * Multi line surround
 " * Not all bracket jumps work
 " * Multi file/buffer replace
+
+" TO LEARN:
+" * Identwise movements
+" * Insert mode keys
 
 " ----------------------- settings -----------------------------
 
@@ -35,9 +38,7 @@ set backup " Keep a backup file
 set backupdir=/private/tmp " Put backup files to tmp (specific for osx)
 set dir=/private/tmp " Put swap files to tmp (specific for osx)
 set pastetoggle=<f5> " Toggle paste mode
-set foldmethod=syntax
-:set sessionoptions+=folds
-" set foldlevel=10
+set foldmethod=syntax " Fold by syntax blocks
 
 let NERDTreeIgnore = ['\.swo$', '\.swp$'] " Let Nerdtree ignore vim backup files
 let NERDTreeMapOpenInTab='\r' " Open files on new buffers
@@ -57,7 +58,7 @@ nnoremap <C-l> <C-W><C-L>
 " Left
 nnoremap <C-h> <C-W><C-H>
 " Save with ,w
-noremap <leader>w :w<CR>zO
+noremap <leader>w :w<CR>
 " Exit with ,q
 noremap <leader>q :q<CR>
 " Save and exit with ,x
