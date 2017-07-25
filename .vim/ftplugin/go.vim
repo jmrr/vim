@@ -27,3 +27,28 @@ map <leader>gd :GoDef<CR>
 map <leader>gt :GoTests<CR>
 map <leader>gb :GoBuild<CR>
 map <F7> :GoFmt<CR>zO
+" Functions declared in the file
+map <leader>dc :GoDecls<CR>
+" Functions declared in the directory
+map <leader>dcl :GoDeclsDir<CR>
+" Linters
+map <leader>gv :GoVet<CR>
+map <leader>gl :GoLint<CR>
+"List callers
+map <leader>gc :GoCallers<CR>
+" List references to variable
+map <leader>gr :GoReferrers<CR>
+" Describe tipe: methods, attrs, definitions
+map <leader>ge :GoDescribe<CR>
+" List types implements error
+map <leader>we :GoWhicherrs<CR>
+" List channel peers
+map <leader>chp :GoChannelPeers
+" List functions which could be called by the func
+map <leader>fc :GoCallees<CR>
+" Call stack
+map <leader>cs :GoCallees<CR>
+" Refactor word under cursor
+map <leader>rf :GoRename<CR>
+" List free vars
+map <leader>fv :'<,'>GoFreevars<CR>

@@ -90,10 +90,10 @@ inoremap ß <esc>A
 
 
 " Visual mode
-function! Refactor(old, new)
-	exe '%s/' . a:old . '/' . a:new . '/gc'
-endfunction
-command -nargs=+ RefactorCmd :call Refactor(<f-args>)
+"function! Refactor(old, new)
+	"exe '%s/' . a:old . '/' . a:new . '/gc'
+"endfunction
+"command -nargs=+ RefactorCmd :call Refactor(<f-args>)
 
 " Refactoring
 vnoremap // y:RefactorCmd <C-R>" 
