@@ -79,6 +79,8 @@ nnoremap <leader>mp :map<CR>
 nnoremap <leader>hi :help index<CR>
 " Remove brackets in pair
 nnoremap <leader>bb %ma%x`ax
+" Run checkers
+nnoremap <leader>rc :SyntasticCheck<CR>
 
 " WARNING: mac specific
 " Make it good and make it better.

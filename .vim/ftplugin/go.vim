@@ -9,7 +9,7 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-"let g:go_fmt_autosave = 0
+let g:go_fmt_autosave = 0
 
 " Fix syntastic compatibility
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
@@ -26,7 +26,7 @@ map <leader>gi :GoImplement<CR>
 map <leader>gd :GoDef<CR>
 map <leader>gt :GoTests<CR>
 map <leader>gb :GoBuild<CR>
-map <F7> :GoFmt<CR>zO
+map <F7> :GoFmt<CR>
 " Functions declared in the file
 map <leader>dc :GoDecls<CR>
 " Functions declared in the directory
@@ -49,6 +49,6 @@ map <leader>fc :GoCallees<CR>
 " Call stack
 map <leader>cs :GoCallees<CR>
 " Refactor word under cursor
-map <leader>rf :GoRename<CR>
+map <leader>gf :GoRename<CR>
 " List free vars
 map <leader>fv :'<,'>GoFreevars<CR>
