@@ -2,13 +2,8 @@
 "                    *** since 2014 ***
 
 " ISSUES:
-" * Remove brackets in pair
-" * Multi word refactoring
-" * List usages (callers) *.go
-" * Multi file/buffer jump
 " * Multi line surround
 " * Not all bracket jumps work
-" * Multi file/buffer replace
 
 " TO LEARN:
 " * Identwise movements
@@ -39,13 +34,14 @@ set backupdir=/private/tmp " Put backup files to tmp (specific for osx)
 set dir=/private/tmp " Put swap files to tmp (specific for osx)
 set pastetoggle=<f5> " Toggle paste mode
 set foldmethod=syntax " Fold by syntax blocks
+set foldlevel=10 " Keep folds opened
 
-let NERDTreeIgnore = ['\.swo$', '\.swp$'] " Let Nerdtree ignore vim backup files
-let NERDTreeMapOpenInTab='\r' " Open files on new buffers
-let NERDTreeShowHidden=1 " Show hidden files
 let mapleader = "," " Set leader
+let NERDTreeIgnore = ['\.swo$', '\.swp$'] " Let Nerdtree ignore vim backup files
+let NERDTreeMapOpenInTab = '\r' " Open files on new buffers
+let NERDTreeShowHidden = 1 " Show hidden files
 let g:AutoPairsShortcutToggle = '<leader>pp' " Auto pairs toggle
-"let g:AutoPairsShortcutFastWrap = '<leader>fw'
+let g:NERDTreeWinSize = 32
 
 " ----------------------- mappings ------------------------------
 
@@ -81,22 +77,14 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 nnoremap <leader>mp :map<CR>
 " Show index
 nnoremap <leader>hi :help index<CR>
+" Remove brackets in pair
+nnoremap <leader>bb %ma%x`ax
 
 " WARNING: mac specific
 " Make it good and make it better.
 inoremap √ <c-r><c-o>+
 inoremap ß <esc>A
-"inoremap ø <esc><"c-o>i
 
-
-" Visual mode
-"function! Refactor(old, new)
-	"exe '%s/' . a:old . '/' . a:new . '/gc'
-"endfunction
-"command -nargs=+ RefactorCmd :call Refactor(<f-args>)
-
-" Refactoring
-vnoremap // y:RefactorCmd <C-R>" 
 " Single line surrounds
 vnoremap <leader>" di""<esc>bpf"l
 vnoremap <leader>' di''<esc>bpf'l
@@ -104,3 +92,6 @@ vnoremap <leader>) di()<esc>bpf)l
 vnoremap <leader>} di{}<esc>bpf}l
 vnoremap <leader>] di[]<esc>bpf]l
 vnoremap <leader>> di<><esc>bpf>l
+
+" Abbreviations
+ab retrun return

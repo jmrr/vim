@@ -9,7 +9,7 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-let g:go_fmt_autosave = 0
+"let g:go_fmt_autosave = 0
 
 " Fix syntastic compatibility
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
