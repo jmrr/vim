@@ -6,6 +6,7 @@
 " * Not all bracket jumps work
 
 " TO LEARN:
+" * Map expression
 " * Identwise movements
 " * Insert mode keys
 
