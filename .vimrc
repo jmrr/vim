@@ -36,6 +36,7 @@ set dir=/private/tmp " Put swap files to tmp (specific for osx)
 set pastetoggle=<f5> " Toggle paste mode
 set foldmethod=syntax " Fold by syntax blocks
 set foldlevel=10 " Keep folds opened
+set so=999 " Disable scrolling
 
 let mapleader = "," " Set leader
 let NERDTreeIgnore = ['\.swo$', '\.swp$'] " Let Nerdtree ignore vim backup files
@@ -83,6 +84,8 @@ nnoremap <leader>bb %ma%x`ax
 " Run checkers
 nnoremap <leader>rc :SyntasticCheck<CR>
 
+nnoremap <leader>at :Gcommit .
+
 " WARNING: mac specific
 " Make it good and make it better.
 inoremap √ <c-r><c-o>+
@@ -98,3 +101,9 @@ vnoremap <leader>> di<><esc>bpf>l
 
 " Abbreviations
 ab retrun return
+
+" Auto commands
+" Remember last position of file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
