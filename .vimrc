@@ -92,6 +92,8 @@ nnoremap <leader>Gd :Gdiff<CR>
 " Git status
 nnoremap <leader>Gs :Gstatus<CR>
 
+nnoremap <leader>at :Gcommit .
+
 " WARNING: mac specific
 " Make it good and make it better.
 inoremap √ <c-r><c-o>+
