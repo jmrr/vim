@@ -83,21 +83,19 @@ nnoremap <leader>hi :help index<CR>
 nnoremap <leader>bb %ma%x`ax
 " Run checkers
 nnoremap <leader>rc :SyntasticCheck<CR>
-
-nnoremap <leader>at :Gcommit .
+" Git commit
+nnoremap <leader>Gc :Gcommit .<CR>
+" Git add to index
+nnoremap <leader>Ga :Gedit<CR>
+" Git diff
+nnoremap <leader>Gd :Gdiff<CR>
+" Git status
+nnoremap <leader>Gs :Gstatus<CR>
 
 " WARNING: mac specific
 " Make it good and make it better.
 inoremap √ <c-r><c-o>+
 inoremap ß <esc>A
-
-" Single line surrounds
-vnoremap <leader>" di""<esc>bpf"l
-vnoremap <leader>' di''<esc>bpf'l
-vnoremap <leader>) di()<esc>bpf)l
-vnoremap <leader>} di{}<esc>bpf}l
-vnoremap <leader>] di[]<esc>bpf]l
-vnoremap <leader>> di<><esc>bpf>l
 
 " Abbreviations
 ab retrun return
