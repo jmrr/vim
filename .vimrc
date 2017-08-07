@@ -37,6 +37,7 @@ set pastetoggle=<f5> " Toggle paste mode
 set foldmethod=syntax " Fold by syntax blocks
 set foldlevel=10 " Keep folds opened
 set scrolloff=50 " Keep curor cetered
+set clipboard=unnamed " Clipboard as the default register
 
 let mapleader = "," " Set leader
 let NERDTreeIgnore = ['\.swo$', '\.swp$'] " Let Nerdtree ignore vim backup files
