@@ -7,15 +7,15 @@
 
 " TO LEARN:
 " * Map expression
-" * Identwise movements
+" * Indent wise movements
 " * Insert mode keys
 
 " ----------------------- settings -----------------------------
 
 " Enable plugins
 execute pathogen#infect()
-colorscheme wombat256mod " Colorscheme wombat256
-syntax on " Syntax on... any kind of
+colorscheme wombat256mod " Color scheme wombat256
+syntax on " Syntax on... Any kind of
 filetype plugin indent on " Use indentation scripts located in the indent folder
 filetype plugin on " Enable plugin vim scripts located in ftplugin directory
 
@@ -27,17 +27,16 @@ set spell " Spell check
 set backspace=2 " Allow backspacing
 set tabstop=4 " Short tabs
 set shiftwidth=4 " 4 columns text is indented with the reindent operations (<< and >>) and automatic C-style indentation.
-set list " Show trailing whitespaces
+set list " Show trailing white spaces
 set listchars=trail:.,tab:>- " Show tabs as >-
-set cursorline " Highlite current line
+set cursorline " Highlight current line
 set backup " Keep a backup file
 set backupdir=/private/tmp " Put backup files to tmp (specific for osx)
 set dir=/private/tmp " Put swap files to tmp (specific for osx)
 set pastetoggle=<f5> " Toggle paste mode
 set foldmethod=syntax " Fold by syntax blocks
 set foldlevel=10 " Keep folds opened
-set scrolloff=50 " Keep curor cetered
-set clipboard=unnamed " Clipboard as the default register
+set scrolloff=50 " Keep cursor centered
 
 let mapleader = "," " Set leader
 let NERDTreeIgnore = ['\.swo$', '\.swp$'] " Let Nerdtree ignore vim backup files
@@ -62,17 +61,17 @@ noremap <leader>w :w<CR>
 noremap <leader>q :q<CR>
 " Save and exit with ,x
 noremap <leader>x :wq<CR>
-" Toggle nerdtree
+" Toggle NERDTree
 map <leader>n :NERDTreeToggle<CR>
 " Reset NERDTree
 map <leader>N :NERDTree<CR>
-" NerdTree default size
+" NERDTree default size
 map <leader>v :BuffergatorToggle<CR>
 " Line break
 noremap <leader>lb i<CR><Esc>
-" Brek line after comma
+" Break line after comma
 noremap <leader>ll :s/,/\0\r/g<CR>
-" Remove trailing whitespaces
+" Remove trailing white spaces
 noremap <leader>dt :%s/\s\+$//e<CR>
 " Reset search highlighting
 noremap <F4> :set hlsearch! hlsearch?<CR>
@@ -92,8 +91,6 @@ nnoremap <leader>Ga :Gedit<CR>
 nnoremap <leader>Gd :Gdiff<CR>
 " Git status
 nnoremap <leader>Gs :Gstatus<CR>
-
-nnoremap <leader>at :Gcommit .
 
 " WARNING: mac specific
 " Make it good and make it better.

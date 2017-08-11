@@ -10,7 +10,7 @@ highlight OverLength ctermfg=244
 match OverLength /\%120v.*/
 
 " Enable python syntax checker
-let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['pylint', 'python']
 
 " Syntastic settings
 let g:syntastic_check_on_wq = 0
