@@ -91,6 +91,13 @@ nnoremap <leader>Ga :Gedit<CR>
 nnoremap <leader>Gd :Gdiff<CR>
 " Git status
 nnoremap <leader>Gs :Gstatus<CR>
+" WARNING: mac specific
+nnoremap <silent>ø :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent>Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
+" WARNING: mac specific
+" Move line
+nnoremap µ :m .+1<CR>==
+nnoremap ∂ :m .-2<CR>==
 
 " WARNING: mac specific
 " Make it good and make it better.
