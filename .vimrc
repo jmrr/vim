@@ -55,6 +55,11 @@ nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 " Left
 nnoremap <C-h> <C-W><C-H>
+" Insert mode no-arrows navigation
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-h> <Left>
 " Save with ,w
 noremap <leader>w :w<CR>
 " Exit with ,q
