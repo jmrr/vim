@@ -24,7 +24,6 @@ set nu " Set line numbers
 set confirm " Confirm save on exit
 set nowrap " lines will not wrap and only part of long lines will be displayed.
 set spell " Spell check
-set backspace=2 " Allow backspacing
 set tabstop=4 " Short tabs
 set shiftwidth=4 " 4 columns text is indented with the reindent operations (<< and >>) and automatic C-style indentation.
 set list " Show trailing white spaces
@@ -59,7 +58,7 @@ nnoremap <C-h> <C-W><C-H>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
-inoremap <C-h> <Left>
+"inoremap <C-h> <Left>
 " Save with ,w
 noremap <leader>w :w<CR>
 " Exit with ,q
