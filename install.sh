@@ -11,8 +11,10 @@ then
 	brew unlink macvim
        	brew link macvim
 
-	ln -sf $PWD/.vim ~/.vim
-	ln -sf $PWD/.vimrc ~/.vimrc
+	rm -f $PWD/.vimrc
+	rm -rf $PWD/.vim
+	ln -s $PWD/.vim ~/.vim
+	ln -s $PWD/.vimrc ~/.vimrc
 
 elif [ $UNAME = "Linux"  ]
 then
