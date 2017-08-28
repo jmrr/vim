@@ -24,7 +24,6 @@ set nu " Set line numbers
 set confirm " Confirm save on exit
 set nowrap " lines will not wrap and only part of long lines will be displayed.
 set spell " Spell check
-set backspace=2 " Allow backspacing
 set tabstop=4 " Short tabs
 set shiftwidth=4 " 4 columns text is indented with the reindent operations (<< and >>) and automatic C-style indentation.
 set list " Show trailing white spaces
@@ -55,6 +54,11 @@ nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 " Left
 nnoremap <C-h> <C-W><C-H>
+" Insert mode no-arrows navigation
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+"inoremap <C-h> <Left>
 " Save with ,w
 noremap <leader>w :w<CR>
 " Exit with ,q
@@ -91,6 +95,13 @@ nnoremap <leader>Ga :Gedit<CR>
 nnoremap <leader>Gd :Gdiff<CR>
 " Git status
 nnoremap <leader>Gs :Gstatus<CR>
+" WARNING: mac specific
+nnoremap <silent>ø :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent>Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
+" WARNING: mac specific
+" Move line
+nnoremap µ :m .+1<CR>==
+nnoremap ∂ :m .-2<CR>==
 
 " WARNING: mac specific
 " Make it good and make it better.
