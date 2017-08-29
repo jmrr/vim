@@ -71,6 +71,8 @@ map <leader>n :NERDTreeToggle<CR>
 map <leader>N :NERDTree<CR>
 " NERDTree default size
 map <leader>v :BuffergatorToggle<CR>
+" Tag list
+nnoremap <leader>lt :TlistToggle<CR>
 " Line break
 noremap <leader>lb i<CR><Esc>
 " Break line after comma
