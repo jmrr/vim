@@ -27,4 +27,5 @@ then
 
 fi
 
+sudo pip install jedi
 git submodule update --init --recursive
