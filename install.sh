@@ -9,7 +9,8 @@ then
 	brew install macvim --with-override-system-vim
 	brew unlink vim
 	brew unlink macvim
-       	brew link macvim
+	brew link macvim
+	brew install ctags
 
 	rm -f $PWD/.vimrc
 	rm -rf $PWD/.vim
