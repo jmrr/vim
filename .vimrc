@@ -43,9 +43,16 @@ let NERDTreeMapOpenInTab = '\r' " Open files on new buffers
 let NERDTreeShowHidden = 1 " Show hidden files
 let g:AutoPairsShortcutToggle = '<leader>pp' " Auto pairs toggle
 let g:NERDTreeWinSize = 32
+" netrw settings
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = -35
 
 " ----------------------- mappings ------------------------------
 
+" Normal mode
 " Down
 nnoremap <C-j> <C-W><C-J>
 " Up
@@ -54,10 +61,6 @@ nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 " Left
 nnoremap <C-h> <C-W><C-H>
-" Insert mode no-arrows navigation
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
 "inoremap <C-h> <Left>
 " Save with ,w
 noremap <leader>w :w<CR>
@@ -65,12 +68,10 @@ noremap <leader>w :w<CR>
 noremap <leader>q :q<CR>
 " Save and exit with ,x
 noremap <leader>x :wq<CR>
-" Toggle NERDTree
-map <leader>n :NERDTreeToggle<CR>
-" Reset NERDTree
-map <leader>N :NERDTree<CR>
-" NERDTree default size
-map <leader>v :BuffergatorToggle<CR>
+" netrw
+nnoremap <leader>n :Vexplore<CR>
+" Explore buffers
+nnoremap <leader>v :BuffergatorToggle<CR>
 " Tag list
 nnoremap <leader>lt :TlistToggle<CR>
 " Line break
@@ -105,6 +106,11 @@ nnoremap <silent>Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
 nnoremap µ :m .+1<CR>==
 nnoremap ∂ :m .-2<CR>==
 
+" Insert mode
+" Insert mode no-arrows navigation
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 " WARNING: mac specific
 " Make it good and make it better.
 inoremap √ <c-r><c-o>+

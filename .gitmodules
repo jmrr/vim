@@ -7,9 +7,6 @@
 [submodule ".vim/bundle/nerd-commenter"]
 	path = .vim/bundle/nerd-commenter
 	url = git@github.com:scrooloose/nerdcommenter.git
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
 [submodule ".vim/bundle/python-synthax"]
 	path = .vim/bundle/python-synthax
 	url = git@github.com:hdima/python-syntax.git
