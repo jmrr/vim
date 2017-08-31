@@ -98,6 +98,8 @@ nnoremap <leader>Ga :Gedit<CR>
 nnoremap <leader>Gd :Gdiff<CR>
 " Git status
 nnoremap <leader>Gs :Gstatus<CR>
+" Git custom command
+nnoremap <C-g> :Git
 " WARNING: mac specific
 nnoremap <silent>ø :set paste<CR>m`o<Esc>``:set nopaste<CR>
 nnoremap <silent>Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
