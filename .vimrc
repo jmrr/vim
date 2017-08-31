@@ -100,20 +100,19 @@ nnoremap <leader>Gd :Gdiff<CR>
 nnoremap <leader>Gs :Gstatus<CR>
 " Git custom command
 nnoremap <C-g> :Git
-" WARNING: mac specific
+" Add line below
 nnoremap <silent>ø :set paste<CR>m`o<Esc>``:set nopaste<CR>
+" Add line above
 nnoremap <silent>Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
-" WARNING: mac specific
-" Move line
+" Move line down
 nnoremap µ :m .+1<CR>==
+" Move line up
 nnoremap ∂ :m .-2<CR>==
 
-" Insert mode
 " Insert mode no-arrows navigation
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
-" WARNING: mac specific
 " Make it good and make it better.
 inoremap √ <c-r><c-o>+
 inoremap ß <esc>A
@@ -121,7 +120,6 @@ inoremap ß <esc>A
 " Abbreviations
 ab retrun return
 
-" Auto commands
 " Remember last position of file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
