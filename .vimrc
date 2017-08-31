@@ -100,22 +100,27 @@ nnoremap <leader>Gd :Gdiff<CR>
 nnoremap <leader>Gs :Gstatus<CR>
 " Git custom command
 nnoremap <C-g> :Git
-" Add line below
-nnoremap <silent>ø :set paste<CR>m`o<Esc>``:set nopaste<CR>
-" Add line above
-nnoremap <silent>Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
-" Move line down
-nnoremap µ :m .+1<CR>==
-" Move line up
-nnoremap ∂ :m .-2<CR>==
 
 " Insert mode no-arrows navigation
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
-" Make it good and make it better.
-inoremap √ <c-r><c-o>+
-inoremap ß <esc>A
+
+" System specific mappings
+if has('mac')
+	" Add line below
+	nnoremap <silent>ø :set paste<CR>m`o<Esc>``:set nopaste<CR>
+	" Add line above
+	nnoremap <silent>Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
+	" Move line down
+	nnoremap µ :m .+1<CR>==
+	" Move line up
+	nnoremap ∂ :m .-2<CR>==
+	" Paste from + register with <A-v>
+	inoremap √ <c-r><c-o>+
+	" To the end of line with <A-b>
+	inoremap ß <esc>A
+endif
 
 " Abbreviations
 ab retrun return
