@@ -33,7 +33,7 @@ map <leader>dc :GoDecls<CR>
 map <leader>dcl :GoDeclsDir<CR>
 " Linters
 map <leader>gv :GoVet<CR>
-map <leader>gl :GoLint<CR>
+map <leader>gl :GoMetaLinter<CR>
 "List callers
 map <leader>gc :GoCallers<CR>
 " List references to variable
