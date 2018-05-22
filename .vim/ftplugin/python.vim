@@ -1,7 +1,5 @@
-" ------------------- Settings ----------------------------
 
-" Let Nerdtree ignore .pyc
-let NERDTreeIgnore = ['\.pyc$']
+" ------------------- Settings ----------------------------
 
 " 80 symbols color column
 set colorcolumn=120

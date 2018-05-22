@@ -1,23 +1,45 @@
 "            ---=== The Great VIM config ===---
 "                    *** since 2014 ***
+"
+" --------------------- Vundle Plugins -------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" ISSUES:
-" * Multi line surround
-" * Not all bracket jumps work
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" TO LEARN:
-" * Map expression
-" * Indent wise movements
-" * Insert mode keys
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'git@github.com:jiangmiao/auto-pairs.git'
+Plugin 'git@github.com:scrooloose/nerdcommenter.git'
+Plugin 'git@github.com:tomtom/tlib_vim.git'
+Plugin 'git@github.com:vim-airline/vim-airline.git'
+Plugin 'git@github.com:jeetsukumaran/vim-buffergator.git'
+Plugin 'git@github.com:garbas/vim-snipmate.git'
+Plugin 'git@github.com:honza/vim-snippets.git'
+Plugin 'git@github.com:michalbachowski/vim-wombat256mod.git'
+Plugin 'git@github.com:MarcWeber/vim-addon-mw-utils.git'
+Plugin 'git@github.com:tpope/vim-surround.git'
+
+" Python specific
+Plugin 'git@github.com:davidhalter/jedi-vim.git'
+Plugin 'git@github.com:jeetsukumaran/vim-indentwise.git'
+Plugin 'git@github.com:vim-python/python-syntax.git'
+
+" Go specific
+Plugin 'git@github.com:fatih/vim-go.git'
+
+call vundle#end()            " required
 
 " ----------------------- settings -----------------------------
 
-" Enable plugins
-execute pathogen#infect()
-colorscheme wombat256mod " Color scheme wombat256
-syntax on " Syntax on... Any kind of
 filetype plugin indent on " Use indentation scripts located in the indent folder
 filetype plugin on " Enable plugin vim scripts located in ftplugin directory
+syntax on " Syntax on... Any kind of
+colorscheme wombat256mod " Color scheme wombat256
 
 set nocompatible " Disable vi compatibility
 set nu " Set line numbers
@@ -38,11 +60,7 @@ set foldlevel=10 " Keep folds opened
 set scrolloff=50 " Keep cursor centered
 
 let mapleader = "," " Set leader
-let NERDTreeIgnore = ['\.swo$', '\.swp$'] " Let Nerdtree ignore vim backup files
-let NERDTreeMapOpenInTab = '\r' " Open files on new buffers
-let NERDTreeShowHidden = 1 " Show hidden files
 let g:AutoPairsShortcutToggle = '<leader>pp' " Auto pairs toggle
-let g:NERDTreeWinSize = 32
 " netrw settings
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
@@ -72,12 +90,8 @@ noremap <leader>x :wq<CR>
 nnoremap <leader>n :Vexplore<CR>
 " Explore buffers
 nnoremap <leader>v :BuffergatorToggle<CR>
-" Tag list
-nnoremap <leader>lt :TlistToggle<CR>
 " Line break
 noremap <leader>lb i<CR><Esc>
-" Break line after comma
-noremap <leader>ll :s/,/\0\r/g<CR>
 " Remove trailing white spaces
 noremap <leader>dt :%s/\s\+$//e<CR>
 " Reset search highlighting
@@ -88,18 +102,6 @@ nnoremap <leader>mp :map<CR>
 nnoremap <leader>hi :help index<CR>
 " Remove brackets in pair
 nnoremap <leader>bb %ma%x`ax
-" Run checkers
-nnoremap <leader>rc :SyntasticCheck<CR>
-" Git commit
-nnoremap <leader>Gc :Gcommit .<CR>
-" Git add to index
-nnoremap <leader>Ga :Gedit<CR>
-" Git diff
-nnoremap <leader>Gd :Gdiff<CR>
-" Git status
-nnoremap <leader>Gs :Gstatus<CR>
-" Git custom command
-nnoremap <C-g> :Git
 
 " Insert mode no-arrows navigation
 inoremap <C-j> <Down>
@@ -107,7 +109,18 @@ inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
 " System specific mappings
-if has('mac')
+if has('macunix')
+	" Add line below
+	nnoremap <C-o> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+	" Add line above
+	nnoremap Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
+	" Move line down <A-m>
+	nnoremap µ :m .+1<CR>==
+	" Move line up: <A-d>
+	nnoremap ∂ :m .-2<CR>==
+	" Paste from + register with <A-v>
+	inoremap √ <c-r><c-o>+
+elseif has('unix')
 	" Add line below
 	nnoremap <silent>ø :set paste<CR>m`o<Esc>``:set nopaste<CR>
 	" Add line above
@@ -118,12 +131,7 @@ if has('mac')
 	nnoremap ∂ :m .-2<CR>==
 	" Paste from + register with <A-v>
 	inoremap √ <c-r><c-o>+
-	" To the end of line with <A-b>
-	inoremap ß <esc>A
 endif
-
-" Abbreviations
-ab retrun return
 
 " Remember last position of file
 if has("autocmd")

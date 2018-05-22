@@ -1,4 +1,5 @@
 */.netrw*
 NetrwTreeListing*
-.vim/autoload
 .vim/colors
+.vim/bundle
+.vim/autoload
