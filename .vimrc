@@ -1,14 +1,45 @@
 "            ---=== The Great VIM config ===---
 "                    *** since 2014 ***
+"
+" --------------------- Vundle Plugins -------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'git@github.com:jiangmiao/auto-pairs.git'
+Plugin 'git@github.com:scrooloose/nerdcommenter.git'
+Plugin 'git@github.com:tomtom/tlib_vim.git'
+Plugin 'git@github.com:vim-airline/vim-airline.git'
+Plugin 'git@github.com:jeetsukumaran/vim-buffergator.git'
+Plugin 'git@github.com:garbas/vim-snipmate.git'
+Plugin 'git@github.com:honza/vim-snippets.git'
+Plugon 'git@github.com:michalbachowski/vim-wombat256mod.git'
+Plugin 'git@github.com:MarcWeber/vim-addon-mw-utils.git'
+Plugin 'git@github.com:tpope/vim-surround.git'
+
+" Python specific
+Plugin 'git@github.com:davidhalter/jedi-vim.git'
+Plugin 'git@github.com:jeetsukumaran/vim-indentwise.git'
+Plugin 'git@github.com:vim-python/python-syntax.git'
+
+" Go specific
+Plugin 'git@github.com:fatih/vim-go.git'
+
+call vundle#end()            " required
 
 " ----------------------- settings -----------------------------
 
-" Enable plugins
-execute pathogen#infect()
-colorscheme wombat256mod " Color scheme wombat256
-syntax on " Syntax on... Any kind of
 filetype plugin indent on " Use indentation scripts located in the indent folder
 filetype plugin on " Enable plugin vim scripts located in ftplugin directory
+syntax on " Syntax on... Any kind of
+colorscheme wombat256mod " Color scheme wombat256
 
 set nocompatible " Disable vi compatibility
 set nu " Set line numbers
