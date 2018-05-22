@@ -106,6 +106,8 @@ nnoremap <leader>mp :map<CR>
 nnoremap <leader>hi :help index<CR>
 " Remove brackets in pair
 nnoremap <leader>bb %ma%x`ax
+" Install plugins
+nnoremap <leader>pl :PluginInstall<CR>
 
 " Insert mode no-arrows navigation
 inoremap <C-j> <Down>
