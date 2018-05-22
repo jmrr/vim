@@ -20,7 +20,7 @@ Plugin 'git@github.com:vim-airline/vim-airline.git'
 Plugin 'git@github.com:jeetsukumaran/vim-buffergator.git'
 Plugin 'git@github.com:garbas/vim-snipmate.git'
 Plugin 'git@github.com:honza/vim-snippets.git'
-Plugon 'git@github.com:michalbachowski/vim-wombat256mod.git'
+Plugin 'git@github.com:michalbachowski/vim-wombat256mod.git'
 Plugin 'git@github.com:MarcWeber/vim-addon-mw-utils.git'
 Plugin 'git@github.com:tpope/vim-surround.git'
 

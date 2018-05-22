@@ -5,9 +5,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	sudo add-apt-repository ppa:jonathonf/vim
 	sudo apt-get update
 	sudo apt-get install vim
-	git submodule update --init --recursive
+
 	ln -sf $(realpath .vim) ~/.vim
 	ln -sf $(realpath .vimrc) ~/.vimrc
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 
@@ -20,13 +21,12 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 
 	brew install macvim --with-override-system-vim
 	brew link macvim
-	git submodule update --init --recursive
 
 	ln -s $PWD/.vim $HOME/.vim
 	ln -s $PWD/.vimrc $HOME/.vimrc
 	ln -s $PWD/vim-pathogen/autoload/ $HOME/.vim/autoload
 
-	brew install ctags
 	sudo pip install jedi
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 fi
