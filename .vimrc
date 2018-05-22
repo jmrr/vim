@@ -25,6 +25,7 @@ Plugin 'git@github.com:MarcWeber/vim-addon-mw-utils.git'
 Plugin 'git@github.com:tpope/vim-surround.git'
 Plugin 'git@github.com:tpope/vim-eunuch.git'
 Plugin 'git@github.com:airblade/vim-gitgutter.git'
+Plugin 'git@github.com:scrooloose/nerdtree.git'
 
 " Python specific
 Plugin 'git@github.com:davidhalter/jedi-vim.git'
@@ -65,13 +66,9 @@ set scrolloff=50 " Keep cursor centered
 
 let mapleader = "," " Set leader
 let g:AutoPairsShortcutToggle = '<leader>pp' " Auto pairs toggle
-" netrw settings
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = -35
-
+" NERDTree
+let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['*\.pyc$', '\.egg-info[[dir]]', '__pycache__', 'build', 'dist']
 " ----------------------- mappings ------------------------------
 
 " Normal mode
@@ -90,8 +87,8 @@ noremap <leader>w :w<CR>
 noremap <leader>q :q<CR>
 " Save and exit with ,x
 noremap <leader>x :wq<CR>
-" netrw
-nnoremap <leader>n :Vexplore<CR>
+" NERDTree toggle
+noremap <leader>n :NERDTreeToggle<CR>
 " Explore buffers
 nnoremap <leader>v :BuffergatorToggle<CR>
 " Line break
@@ -143,3 +140,6 @@ endif
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+" Close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
