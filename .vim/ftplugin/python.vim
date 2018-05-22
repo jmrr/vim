@@ -19,3 +19,6 @@ let g:jedi#documentation_command = "jo"
 let g:jedi#usages_command = "<leader>ju"
 let g:jedi#completions_command = "<C-Spase>"
 let g:jedi#rename_command = "<leader>jr"
+
+" AutoPEP8
+nnoremap <leader>8 :Autopep8<CR>
