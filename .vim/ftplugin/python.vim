@@ -22,3 +22,5 @@ let g:jedi#rename_command = "<leader>jr"
 
 " AutoPEP8
 nnoremap <leader>8 :Autopep8<CR>
+let g:autopep8_aggressive=2
+let g:autopep8_diff_type='vertical'

@@ -24,6 +24,7 @@ Plugin 'git@github.com:michalbachowski/vim-wombat256mod.git'
 Plugin 'git@github.com:MarcWeber/vim-addon-mw-utils.git'
 Plugin 'git@github.com:tpope/vim-surround.git'
 Plugin 'git@github.com:tpope/vim-eunuch.git'
+Plugin 'git@github.com:airblade/vim-gitgutter.git'
 
 " Python specific
 Plugin 'git@github.com:davidhalter/jedi-vim.git'
