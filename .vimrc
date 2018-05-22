@@ -23,6 +23,7 @@ Plugin 'git@github.com:honza/vim-snippets.git'
 Plugin 'git@github.com:michalbachowski/vim-wombat256mod.git'
 Plugin 'git@github.com:MarcWeber/vim-addon-mw-utils.git'
 Plugin 'git@github.com:tpope/vim-surround.git'
+Plugin 'git@github.com:w0rp/ale.git'
 
 " Python specific
 Plugin 'git@github.com:davidhalter/jedi-vim.git'
