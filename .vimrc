@@ -1,15 +1,6 @@
 "            ---=== The Great VIM config ===---
 "                    *** since 2014 ***
 
-" ISSUES:
-" * Multi line surround
-" * Not all bracket jumps work
-
-" TO LEARN:
-" * Map expression
-" * Indent wise movements
-" * Insert mode keys
-
 " ----------------------- settings -----------------------------
 
 " Enable plugins
@@ -38,11 +29,7 @@ set foldlevel=10 " Keep folds opened
 set scrolloff=50 " Keep cursor centered
 
 let mapleader = "," " Set leader
-let NERDTreeIgnore = ['\.swo$', '\.swp$'] " Let Nerdtree ignore vim backup files
-let NERDTreeMapOpenInTab = '\r' " Open files on new buffers
-let NERDTreeShowHidden = 1 " Show hidden files
 let g:AutoPairsShortcutToggle = '<leader>pp' " Auto pairs toggle
-let g:NERDTreeWinSize = 32
 " netrw settings
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
@@ -72,12 +59,8 @@ noremap <leader>x :wq<CR>
 nnoremap <leader>n :Vexplore<CR>
 " Explore buffers
 nnoremap <leader>v :BuffergatorToggle<CR>
-" Tag list
-nnoremap <leader>lt :TlistToggle<CR>
 " Line break
 noremap <leader>lb i<CR><Esc>
-" Break line after comma
-noremap <leader>ll :s/,/\0\r/g<CR>
 " Remove trailing white spaces
 noremap <leader>dt :%s/\s\+$//e<CR>
 " Reset search highlighting
@@ -88,18 +71,6 @@ nnoremap <leader>mp :map<CR>
 nnoremap <leader>hi :help index<CR>
 " Remove brackets in pair
 nnoremap <leader>bb %ma%x`ax
-" Run checkers
-nnoremap <leader>rc :SyntasticCheck<CR>
-" Git commit
-nnoremap <leader>Gc :Gcommit .<CR>
-" Git add to index
-nnoremap <leader>Ga :Gedit<CR>
-" Git diff
-nnoremap <leader>Gd :Gdiff<CR>
-" Git status
-nnoremap <leader>Gs :Gstatus<CR>
-" Git custom command
-nnoremap <C-g> :Git
 
 " Insert mode no-arrows navigation
 inoremap <C-j> <Down>
@@ -107,7 +78,18 @@ inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
 " System specific mappings
-if has('mac')
+if has('macunix')
+	" Add line below
+	nnoremap <C-o> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+	" Add line above
+	nnoremap Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
+	" Move line down <A-m>
+	nnoremap µ :m .+1<CR>==
+	" Move line up: <A-d>
+	nnoremap ∂ :m .-2<CR>==
+	" Paste from + register with <A-v>
+	inoremap √ <c-r><c-o>+
+elseif has('unix')
 	" Add line below
 	nnoremap <silent>ø :set paste<CR>m`o<Esc>``:set nopaste<CR>
 	" Add line above
@@ -118,12 +100,7 @@ if has('mac')
 	nnoremap ∂ :m .-2<CR>==
 	" Paste from + register with <A-v>
 	inoremap √ <c-r><c-o>+
-	" To the end of line with <A-b>
-	inoremap ß <esc>A
 endif
-
-" Abbreviations
-ab retrun return
 
 " Remember last position of file
 if has("autocmd")
