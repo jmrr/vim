@@ -56,9 +56,12 @@ set shiftwidth=4 " 4 columns text is indented with the reindent operations (<< a
 set list " Show trailing white spaces
 set listchars=trail:.,tab:>- " Show tabs as >-
 set cursorline " Highlight current line
-set backup " Keep a backup file
-set backupdir=/private/tmp " Put backup files to tmp (specific for osx)
-set dir=/private/tmp " Put swap files to tmp (specific for osx)
+" Move backups and swaps to tmp
+set backup
+set swapfile
+set dir=/tmp
+set backupdir=/tmp
+set directory=/tmp
 set pastetoggle=<f5> " Toggle paste mode
 set foldmethod=syntax " Fold by syntax blocks
 set foldlevel=10 " Keep folds opened
