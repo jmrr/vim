@@ -71,7 +71,7 @@ let mapleader = "," " Set leader
 let g:AutoPairsShortcutToggle = '<leader>pp' " Auto pairs toggle
 " NERDTree
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['*\.pyc$', '\.egg-info[[dir]]', '__pycache__', 'build', 'dist']
+let NERDTreeIgnore = ['\.pyc$', '\.egg-info[[dir]]', '__pycache__', 'build', 'dist', 'vendor', '\.lock$']
 " ----------------------- mappings ------------------------------
 
 " Normal mode
