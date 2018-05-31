@@ -115,18 +115,19 @@ inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
 " System specific mappings
-if has('macunix')
+if has('unix')
 	" Add line below
 	nnoremap <C-o> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+	" TODO: define for Linux
 	" Add line above
-	nnoremap Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
+	nnoremap <A-O> :set paste<CR>m`<S-o><Esc>``:set nopaste<CR>
 	" Move line down <A-m>
 	nnoremap µ :m .+1<CR>==
 	" Move line up: <A-d>
 	nnoremap ∂ :m .-2<CR>==
 	" Paste from + register with <A-v>
 	inoremap √ <c-r><c-o>+
-elseif has('unix')
+elseif has('macunix')
 	" Add line below
 	nnoremap <silent>ø :set paste<CR>m`o<Esc>``:set nopaste<CR>
 	" Add line above
