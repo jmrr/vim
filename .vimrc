@@ -128,13 +128,13 @@ if has('unix')
 	" Paste from + register with <A-v>
 	inoremap √ <c-r><c-o>+
 elseif has('macunix')
-	" Add line below
+	" Add line below <FN-o>
 	nnoremap <silent>ø :set paste<CR>m`o<Esc>``:set nopaste<CR>
-	" Add line above
+	" Add line above <FN-S-o>
 	nnoremap <silent>Ø :set paste<CR>m`O<Esc>``:set nopaste<CR>
-	" Move line down
+	" Move line down <A-m>
 	nnoremap µ :m .+1<CR>==
-	" Move line up
+	" Move line up <A-d>
 	nnoremap ∂ :m .-2<CR>==
 	" Paste from + register with <A-v>
 	inoremap √ <c-r><c-o>+
