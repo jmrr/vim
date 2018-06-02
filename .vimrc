@@ -66,12 +66,13 @@ set pastetoggle=<f5> " Toggle paste mode
 set foldmethod=syntax " Fold by syntax blocks
 set foldlevel=10 " Keep folds opened
 set scrolloff=50 " Keep cursor centered
+let g:pymode_rope = 0 "Disable rope
 
 let mapleader = "," " Set leader
 let g:AutoPairsShortcutToggle = '<leader>pp' " Auto pairs toggle
 " NERDTree
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.pyc$', '\.egg-info[[dir]]', '__pycache__', 'build', 'dist', 'vendor', '\.lock$']
+let NERDTreeIgnore = ['\.pyc$', '\.egg-info[[dir]]', '__pycache__', 'build$', 'dist', 'vendor', '\.lock$']
 " ----------------------- mappings ------------------------------
 
 " Normal mode
