@@ -26,6 +26,7 @@ Plugin 'git@github.com:tpope/vim-surround.git'
 Plugin 'git@github.com:tpope/vim-eunuch.git'
 Plugin 'git@github.com:airblade/vim-gitgutter.git'
 Plugin 'git@github.com:scrooloose/nerdtree.git'
+Plugin 'git@github.com:christoomey/vim-tmux-navigator.git'
 
 " Python specific
 Plugin 'git@github.com:davidhalter/jedi-vim.git'
@@ -53,6 +54,7 @@ set nowrap " lines will not wrap and only part of long lines will be displayed.
 set spell " Spell check
 set tabstop=4 " Short tabs
 set shiftwidth=4 " 4 columns text is indented with the reindent operations (<< and >>) and automatic C-style indentation.
+set expandtab
 set list " Show trailing white spaces
 set listchars=trail:.,tab:>- " Show tabs as >-
 set cursorline " Highlight current line
