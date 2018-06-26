@@ -7,6 +7,7 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -45,7 +46,10 @@ call vundle#end()            " required
 filetype plugin indent on " Use indentation scripts located in the indent folder
 filetype plugin on " Enable plugin vim scripts located in ftplugin directory
 syntax on " Syntax on... Any kind of
-colorscheme wombat256mod " Color scheme wombat256
+" colorscheme wombat256mod " Color scheme wombat256x
+syntax enable
+set background=dark
+colorscheme solarized
 
 set nocompatible " Disable vi compatibility
 set nu " Set line numbers
